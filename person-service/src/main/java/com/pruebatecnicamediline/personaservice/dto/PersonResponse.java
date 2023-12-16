@@ -1,5 +1,6 @@
 package com.pruebatecnicamediline.personaservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,18 +15,16 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class PersonResponse {
-    private  long id;
-    @JsonProperty("first-name")
+    private  Long id;
+    private  Integer maxFavouriteMovies;
     private  String firstName;
 
-    @JsonProperty("last-name")
     private  String lastName;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "UTC")
     private Date birthdate;
 
-    @JsonProperty("has-insurance")
-    private  boolean hasInsurance;
+    private Boolean hasInsurance;
 
-    @JsonProperty("favourite-movies")
     private List<Object> favouriteMovies;
 }

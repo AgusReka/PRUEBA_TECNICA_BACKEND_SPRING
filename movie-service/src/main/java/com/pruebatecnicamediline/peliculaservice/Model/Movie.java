@@ -10,7 +10,9 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Movie {
-    private long id;
+    private Long id;
     private String title;
     private MovieGenre genre;
+    private float rating;
+    private long favoriteAmount;
 }
